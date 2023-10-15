@@ -24,6 +24,10 @@ struct Home: View {
                         .scaledToFill()
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
+                        .anchorPreference(key: AnchorKey.self,
+                                          value: .bounds) {
+                            return [collect.id.uuidString : $0]
+                        }
                     
                     VStack(alignment: .leading, spacing: 6) {
                         Text(collect.imageName)

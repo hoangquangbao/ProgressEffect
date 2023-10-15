@@ -20,11 +20,21 @@ struct DetailView: View {
                 
                 ScrollView(.vertical) {
                     ///Detail Collection Image
-                    Image(selectCollect.imageName)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: size.width, height: 400)
-                        .clipped()
+                    Rectangle()
+                        .fill(.clear)
+                        .overlay(content: {
+                            Image(selectCollect.imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: size.width, height: 400)
+                                .clipped()
+                                .hidden()
+                        })
+                        .frame(height: 400)
+                    ///Destination Anchor Frame
+                        .anchorPreference(key: AnchorKey.self, value: .bounds) {
+                            return ["DESTINATION" : $0]
+                        }
                 }
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: size.width, height: size.height)

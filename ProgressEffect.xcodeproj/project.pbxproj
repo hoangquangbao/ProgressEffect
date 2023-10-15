@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29129F742ADB6CBD009D8090 /* AnchorKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29129F732ADB6CBD009D8090 /* AnchorKey.swift */; };
 		2992DA0A2ADADC6B00D23A51 /* ProgressEffectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992DA092ADADC6B00D23A51 /* ProgressEffectApp.swift */; };
 		2992DA0C2ADADC6B00D23A51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992DA0B2ADADC6B00D23A51 /* ContentView.swift */; };
 		2992DA0E2ADADC6D00D23A51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2992DA0D2ADADC6D00D23A51 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29129F732ADB6CBD009D8090 /* AnchorKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorKey.swift; sourceTree = "<group>"; };
 		2992DA062ADADC6B00D23A51 /* ProgressEffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgressEffect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2992DA092ADADC6B00D23A51 /* ProgressEffectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEffectApp.swift; sourceTree = "<group>"; };
 		2992DA0B2ADADC6B00D23A51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29129F722ADB6C96009D8090 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				29129F732ADB6CBD009D8090 /* AnchorKey.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2992D9FD2ADADC6B00D23A51 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +67,7 @@
 		2992DA082ADADC6B00D23A51 /* ProgressEffect */ = {
 			isa = PBXGroup;
 			children = (
+				29129F722ADB6C96009D8090 /* Helpers */,
 				2992DA172ADADFF000D23A51 /* Model */,
 				2992DA182ADADFF600D23A51 /* View */,
 				2992DA092ADADC6B00D23A51 /* ProgressEffectApp.swift */,
@@ -164,6 +175,7 @@
 			files = (
 				2992DA0C2ADADC6B00D23A51 /* ContentView.swift in Sources */,
 				2992DA1A2ADAE01000D23A51 /* Profile.swift in Sources */,
+				29129F742ADB6CBD009D8090 /* AnchorKey.swift in Sources */,
 				2992DA1C2ADAE19500D23A51 /* Home.swift in Sources */,
 				2992DA1E2ADAF2DA00D23A51 /* DetailView.swift in Sources */,
 				2992DA0A2ADADC6B00D23A51 /* ProgressEffectApp.swift in Sources */,
