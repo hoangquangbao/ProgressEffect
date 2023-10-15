@@ -16,6 +16,7 @@ struct Home: View {
     @State private var isShowDetail: Bool = false
     @State private var heroProgress: CGFloat = 0
     @State private var isShowHeroView: Bool = false
+    
     var body: some View {
         NavigationStack {
             List(allCollects) { collect in
@@ -61,7 +62,9 @@ struct Home: View {
         .overlay {
             if isShowDetail {
                 DetailView(selectCollect: $selectCollect,
-                           isShowDetail: $isShowDetail)
+                           isShowDetail: $isShowDetail,
+                           heroProgress: $heroProgress,
+                           isShowHeroView: $isShowHeroView)
                 .transition(.identity)
             }
         }
