@@ -11,6 +11,8 @@ struct DetailView: View {
     
     @Binding var selectCollect: Collect?
     @Binding var isShowDetail: Bool
+    @Binding var heroProgress: CGFloat
+    @Binding var isShowHeroView: Bool
     @Environment(\.colorScheme) private var scheme
     
     var body: some View {
@@ -23,12 +25,14 @@ struct DetailView: View {
                     Rectangle()
                         .fill(.clear)
                         .overlay(content: {
-                            Image(selectCollect.imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: size.width, height: 400)
-                                .clipped()
-                                .hidden()
+//                            if !isShowHeroView {
+                                Image(selectCollect.imageName)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: size.width, height: 400)
+                                    .clipped()
+                                    .hidden()
+//                            }
                         })
                         .frame(height: 400)
                     ///Destination Anchor Frame
@@ -44,19 +48,22 @@ struct DetailView: View {
                         .edgesIgnoringSafeArea(.all)
                 }
                 ///Close button
-                .overlay(alignment: .topLeading, content: {
-                    Image(systemName: "xmark.square.fill")
-                        .font(.largeTitle)
-                        .imageScale(.medium)
-                        .foregroundStyle(.white, .black)
-                        .padding(.leading)
-                        .onTapGesture {
-                            withAnimation(.easeOut(duration: 0.25)) {
-                                isShowDetail = false
-                            }
-                            self.selectCollect = nil
-                        }
-                })
+//                .overlay(alignment: .topLeading, content: {
+//                    Button {
+//                        isShowDetail = false
+//                        self.selectCollect = nil
+//                    } label: {
+//                        Image(systemName: "xmark.square.fill")
+//                            .font(.largeTitle)
+//                            .imageScale(.medium)
+//                            .foregroundStyle(.white, .black)
+//                            .padding(.leading)
+//                    }
+////                    .buttonStyle(.plain)
+////                    .opacity(isShowHeroView ? 0 : 1)
+////                    .animation(.spring(), value: isShowHeroView)
+//                })
+//                .offset(x: size.width - (size.width * heroProgress))
             }
         }
     }
