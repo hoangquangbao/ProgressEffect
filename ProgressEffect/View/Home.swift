@@ -13,7 +13,7 @@ struct Home: View {
     @State var allCollects: [Collect] = collects
     ///Details properties
     @State var selectCollect: Collect?
-    @State var isShowDetails: Bool = false
+    @State var isShowDetail: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -40,11 +40,21 @@ struct Home: View {
                 .contentShape(Rectangle())
                 .onTapGesture {
                     selectCollect = collect
-                    isShowDetails = true
+                    withAnimation(.easeOut(duration: 0.25)) {
+                        isShowDetail = true
+                    }
                 }
             }
             .listStyle(.plain)
             .navigationTitle("Progress Effect")
+        }
+        .overlay {
+            if isShowDetail {
+                DetailView(selectCollect: $selectCollect,
+                           isShowDetail: $isShowDetail)
+                .transition(.move(edge: .bottom))
+//                .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .top)))
+            }
         }
     }
 }
