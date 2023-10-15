@@ -61,9 +61,7 @@ struct Home: View {
         .overlay {
             if isShowDetail {
                 DetailView(selectCollect: $selectCollect,
-                           isShowDetail: $isShowDetail,
-                           heroProgress: $heroProgress,
-                           isShowHeroView: $isShowHeroView)
+                           isShowDetail: $isShowDetail)
                 .transition(.identity)
             }
         }
@@ -93,7 +91,6 @@ struct Home: View {
                         .clipShape(RoundedRectangle(cornerRadius: radius))
                         .offset(x: sourceRect.minX + (diffOrigin.x * heroProgress),
                                 y: sourceRect.minY + (diffOrigin.y * heroProgress))
-                    //                        .opacity(isShowHeroView ? 1 : 0)
                         .overlay(alignment: .topLeading, content: {
                             if isShowHeroView {
                                 Button {
